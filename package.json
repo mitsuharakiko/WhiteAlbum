@@ -1,0 +1,14 @@
+{
+  "name": "white_album",
+  "version": "1.0.0",
+  "description": "白色相簿，取名灵感来自日本有名的GalGame白色相簿系列。这个准备做成简约式风格的日志、相册网站。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "杜康",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
