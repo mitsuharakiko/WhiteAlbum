@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var path = require('path');
 var app = express();
 
@@ -10,12 +11,21 @@ app.set('view engine', 'handlebars');
 
 app.set('port', process.env.PORT || 8888);
 
+app.use(bodyParser());
+
 // 加载静态资源
 app.use(express.static(path.resolve(__dirname , './public')));
+
+app.post('/process', function(req, res) {
+	console.log('Color: '+ req.body.color);
+	// res.send(req.body.color);
+	res.redirect(301, '/about');
+});
 
 app.get('/', function(req, res){
 	res.render('home');
 });
+
 
 app.get('/about', function (req, res) {
 	res.render('about');
